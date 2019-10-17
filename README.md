@@ -1,2 +1,2 @@
-# vueExercise1
-vue workshop exercise 1
+# vue Workshop
+vue workshop
