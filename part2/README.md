@@ -262,5 +262,97 @@ inside the .vue file there will be 3 sections:
   7) beforeDestroy
   8) destroyed
 
+### slots
+- what are slots? 
+- it is what vue js provides for passing content into component
+- E.g. of slots:
+  ```
+  // in the parent file
+  <child :name='name' @resetName='name = $event'>
+    // add content to child
+    <div>
+      <p>Hello I am baby Ruth!</p>
+    </div>
+  </child>
+  ```
+  ```
+  // in the child component
+  <template>
+      <p>Baby {{ name }} is so {{ description }}</p>
+      // add slot
+      <slot></slot>
+    </template>
+  ```
+- multiple slots
+  ```
+    // add name to slot
+    <slot name="title"></slot>
+  ```
+  ```
+    // in parent, add slot name to content
+    <p slot="title">Hello I am baby Ruth!</p>
+  ```
+
+## Router
+  - install vue router:
+    ```
+    npm install --save vue-router
+    ```
+  - add vue-router to applicaiton:
+    ```
+    // in main.js
+    import VueRouter from 'vue-router';
+
+    Vue.use(VueRouter);
+
+    ```
+  - create a routes.js file:
+    ```
+      import Baby from './components/baby/Baby.vue';
+
+      export const routes = [
+        { path: '/baby', component: Baby }
+      ];
+    ```
+  - Use routes.js in main.js
+    ```
+    // add import
+    import { routes } from './routes';
+
+    Vue.use(vueRouter);
+
+    // add a new router
+    const router = new VueRouter({
+      routes
+    })
+
+    new Vue({
+      el: "#app",
+      //add the new router into the instance
+      router,
+      render: h => h(App)
+    })
+    ```
+  
+  ### Add the ```<router-view></router-view>``` so vue will know where to change the component 
+    ```
+    // in the main.js we add the router view
+    <router-view></router-view>
+    ```
+
+  - Change the mode from hash to history
+    ```
+    const router = new VueRouter({
+      routes,
+      //change it to history to remove the '#'
+      mode: 'history'
+    })
+    ```
+### add links
+  - Add router links ```<router-link></router-link>```
+    ```
+    <router-link to="/">Home</router-link>
+    ```
+
 ## Exercise 2
  

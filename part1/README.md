@@ -1,6 +1,6 @@
 # vue Workshop
 
-##Introduction to Vue.js
+## Introduction to Vue.js
 
 **What is Vue.js?**
 Vue.js is a progressive framework for building user interfaces.
@@ -27,16 +27,16 @@ https://jsfiddle.net/chrisvfritz/50wL7mdz/
 		- e.g. ```
 			<input type=”text” v-model=”name”>
 			<p>{{ name }}</p>
-			Data: {name: isaac}
+			data: {name: isaac}
 		```
 
 4. Listening to events 
 	- Using ```v-on:click```
 	```
 	<button v-on:click=”increase”> click me </button>
-	<p>{{ counter}} </p>
-	Data: { counter: 0 }
-	Methods: { increase() { return this.increase++ } }
+	<p>{{ counter }} </p>
+	data: { counter: 0 }
+	methods: { increase() { return this.increase++ } }
 	```
 	- Methods are just normal functions
 
@@ -46,9 +46,9 @@ https://jsfiddle.net/chrisvfritz/50wL7mdz/
 	- When we use it we do not use the parentheses
 	- E.g. ```{{ output }}```
 	```
-	Computed: { 
+	computed: { 
 		output() {
-			Return counter > 5 ? ‘yes’ : ‘no’
+			Return this.counter > 5 ? ‘yes’ : ‘no’
 		}
 	}
 	```

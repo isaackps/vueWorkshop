@@ -137,13 +137,13 @@
       this.playerHealth -= monsterDamage;
 
       if (this.playerHealth <= 0) {
-        alert('You lost!');
+        alert('You lose!');
         this.gameIsRunning = false;
       }
     }
     ```
 ### Refactor the code!!
-  - create calculate damage function
+  - create calculate damage function in methods
     ```
     calculateDamage(min, max) {
       return Math.max(Math.floor(Math.random() * max) + 1, min);
@@ -257,7 +257,7 @@
         this.playerHealth = 100;
       }
       this.monsterAttack();
-    })
+    }
     ```
 ### Finishing the action buttons
   - Implement give up method
@@ -280,13 +280,13 @@
   - Push the logs into the turn array
     ```
     attack() {
-      const damage = this.calculateDamage(3, 10);
-      this.monsterHealth -= damage;
+      const playerDamage = this.calculateDamage(3, 10);
+      this.monsterHealth -= playerDamage;
 
       // create and push the logs into the 'turns' array
       this.turns.unshift({
         player: true,
-        text: 'Player hits monster for ' + damage
+        text: 'Player hits monster for ' + playerDamage
       })
 
       if (this.checkWin()) {
@@ -301,13 +301,14 @@
     monsterAttack() {
       const damage = this.calculateDamage(5, 12);
       this.playerHealth -= damage;
-      this.checkWin();
 
       // create and push the logs into the 'turns' array
       this.turns.unshift({
         player: false,
         text: 'Monster hits player for ' + damage
       })
+
+      this.checkWin();
     }
     ```
   - Add ```v-for``` to print the logs
@@ -375,7 +376,7 @@
     ```
     <ul>
         <li v-for="turn in turns"
-          :class="{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}">
+          :class="{'player-turn': turn.player, 'monster-turn': !turn.player}">
           {{ turn.text }}
         </li>
     </ul>
