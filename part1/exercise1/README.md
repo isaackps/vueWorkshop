@@ -1,4 +1,14 @@
-# Exercise1
+# Exercise 1
+
+In this exercise, we will create a simple game where:
+- Player can attack a monster
+- The monster can attack player
+- Game over when either player's health or monster's helath reaches 0
+- Player can heal his/her health
+- Player can hit with a special attack
+- Player can give up if it is too hard
+- Player can restart the game
+
 ---
 ### Health bar
 
