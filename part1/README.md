@@ -16,11 +16,14 @@ https://jsfiddle.net/chrisvfritz/50wL7mdz/
 	- Then use the key defined in the ```data: { message: 'hello world' }``` to display it in the DOM
 
 2. Directives
+	- https://marozed.ma/vue-cheatsheet/
 	- Directives are prefixed with ```v-```
 	E.g. v-if, v-else , v-bind, v-for 
 	```
 	v-if=”show”, show: true/false
 	v-else
+
+	// one-way data binding
 	v-bind:title=”title”, title=’abc’
 	```
 	
@@ -43,10 +46,10 @@ https://jsfiddle.net/chrisvfritz/50wL7mdz/
 	- Methods are just normal functions
 
 5. Computed 
-	- Computed is also a function but vue sees it as a more intelligent object
-	- Only activates when needed
-	- When we use it we do not use the parentheses
-	- E.g. ```{{ output }}```
+	- Computed properties are cached based on their reactive dependencies.
+	- A computed property will only re-evaluate when some of its reactive dependencies have changed.
+	- Thus, we do not need to use the parentheses when calling the function
+	- E.g. ```use {{ output }}, not {{ output() }}```
 	```
 	computed: { 
 		output() {
@@ -54,6 +57,5 @@ https://jsfiddle.net/chrisvfritz/50wL7mdz/
 		}
 	}
 	```
-	- For computed property vue.js analyse the code and is aware when to use the function
 
 Now, code along to build the mini game with the basics that you just learn

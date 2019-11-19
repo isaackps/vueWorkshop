@@ -163,7 +163,7 @@ inside the .vue file there will be 3 sections:
     }
     // Show the difference with this code
     // changeName() {
-    //  this.name = 'Esther
+    //  this.name = 'Esther'
     // }
   }
   ```
@@ -290,6 +290,8 @@ inside the .vue file there will be 3 sections:
     export const store = new Vuex.Store({
       state: {
         name: ''
+        // or default it to:
+        // name: 'isaac'
       }
     })
     ```
@@ -304,6 +306,9 @@ inside the .vue file there will be 3 sections:
       render: h => h(App),
     }).$mount('#app')
     ```
+  
+  ### State
+
   - Use the state stored in store in the component
     ```
     //create a new component and in the component

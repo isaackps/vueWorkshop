@@ -3,6 +3,7 @@
 In this exercise, we will create a simple game where:
 - Player can attack a monster
 - The monster can attack player
+- It will be a turn based game
 - Game over when either player's health or monster's helath reaches 0
 - Player can heal his/her health
 - Player can hit with a special attack
