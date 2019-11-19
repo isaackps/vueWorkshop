@@ -3,9 +3,11 @@
 ## Introduction to Vue.js
 
 **What is Vue.js?**
+
 Vue.js is a progressive framework for building user interfaces.
 
 **Part 1**
+
 We will go through and introduce the basics of vue js in this js fiddle.
 https://jsfiddle.net/chrisvfritz/50wL7mdz/
 
